@@ -8,13 +8,12 @@
 import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import RootNavigation from './src/navigations';
 
 const App = () => {
   return (
     <SafeAreaView style={Styles.parent}>
-      <NavigationContainer>
-        
-      </NavigationContainer>
+      <RootNavigation />
     </SafeAreaView>
   );
 }
