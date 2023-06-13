@@ -10,8 +10,9 @@ const SendingScreen = ({navigation}) => {
         <Text style={styles.heading}>Sending Money...</Text>
         <Text style={styles.description}>Ensure that the two mobile devices are within 5 cm and both have NFC connectivity.</Text>
       </View>
-      <View>
-        <Text>Animations here</Text>
+      <View style={styles.animationContainer}>
+        <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
+        <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
@@ -40,14 +41,24 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: scale(20),
-    fontWeight: '400',
     color: '#000000',
   },
   description: {
     textAlign: 'center',
     fontSize: scale(10),
-    fontWeight: '400',
     color: '#838383'
+  },
+  animationContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    height: '50%',
+  },
+  animationBoxes: {
+    height: scale(81),
+    width: scale(49),
+    borderRadius: scale(10),
   },
   buttonContainer: {
     justifyContent: 'flex-end',
@@ -66,7 +77,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: scale(20),
-    fontWeight: '400',
     color: '#A010A3'
   }
 });
