@@ -1,7 +1,8 @@
 import React from 'react'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import MainStack from './MainStack';
 import { NavigationContainer } from '@react-navigation/native';
+import {SendingScreen} from "../screens/SendingScreen";
+import {ReceivingScreen} from "../screens/ReceivingScreen";
 
 const Stack = createNativeStackNavigator();
 
