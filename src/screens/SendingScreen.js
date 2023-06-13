@@ -3,7 +3,7 @@ import React from 'react'
 import { scale } from 'react-native-size-matters';
 import Toast from 'react-native-simple-toast';
 
-const SendingScreen = () => {
+const SendingScreen = ({navigation}) => {
   return (
     <View style={styles.parent}>
       <View style={styles.topContainer}>
@@ -14,8 +14,13 @@ const SendingScreen = () => {
         <Text>Animations here</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.cancelButton}>
-          <Text>Cancel</Text>
+        <TouchableOpacity 
+          onPress={() => {
+            Toast.show('Cancelled successfully', Toast.SHORT);
+            navigation.navigate('Receiving');
+          }}
+          style={styles.cancelButton}>
+          <Text style={styles.buttonText}>Cancel</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -58,6 +63,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: scale(25),
+  },
+  buttonText: {
+    fontSize: scale(20),
+    fontWeight: '400',
+    color: '#A010A3'
   }
 });
 
