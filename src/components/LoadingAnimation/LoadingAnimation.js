@@ -9,7 +9,7 @@ const LoadingAnimation = () => {
     useEffect(() => {
         const animation = Animated.timing(animationProgress.current, {
             toValue: 1,
-            duration: 5000,
+            duration: 4000,
             easing: Easing.linear,
             useNativeDriver: false,
         });
@@ -28,6 +28,7 @@ const LoadingAnimation = () => {
     <Lottie 
         source={require('../../assets/animation.json')}
         progress={animationProgress.current}
+        loop
     />
   );
 }

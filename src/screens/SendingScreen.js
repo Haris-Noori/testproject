@@ -4,6 +4,7 @@ import { scale } from 'react-native-size-matters';
 import Toast from 'react-native-simple-toast';
 import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
+import fonts from '../assets/fonts/fonts';
 
 const SendingScreen = ({navigation}) => {
 
@@ -11,7 +12,7 @@ const SendingScreen = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 5000);
+    }, 10000);
 
     return () => {
       clearTimeout(timer);
@@ -21,11 +22,13 @@ const SendingScreen = ({navigation}) => {
   return (
     <View style={styles.parent}>
       <ScreenHeading heading={'Sending Money...'} />
+      
       <View style={styles.animationContainer}>
         {showAnimation ? <LoadingAnimation /> : null}
         <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
         <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
       </View>
+      
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           onPress={() => {
@@ -76,7 +79,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: scale(20),
-    color: '#A010A3'
+    color: '#A010A3',
+    fontFamily: fonts.comRegular
   }
 });
 

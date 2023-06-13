@@ -4,6 +4,7 @@ import { scale } from 'react-native-size-matters';
 import Toast from 'react-native-simple-toast';
 import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
+import fonts from '../assets/fonts/fonts';
 
 const ReceivingScreen = ({navigation}) => {
 
@@ -11,7 +12,7 @@ const ReceivingScreen = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 5000);
+    }, 10000);
 
     return () => {
       clearTimeout(timer);
@@ -20,19 +21,21 @@ const ReceivingScreen = ({navigation}) => {
 
   return (
     <View style={styles.parent}>
-      <ScreenHeading heading={'Receive Mode'} />
+      <ScreenHeading heading={'Receiver Mode'} />
+      
       <View style={styles.animationContainer}>
         {showAnimation ? <LoadingAnimation /> : null}
         <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
         <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
       </View>
+      
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           onPress={() => {
             Toast.show('Ended successfully', Toast.SHORT);
             navigation.replace('Sending');
           }}
-          style={styles.cancelButton}>
+          style={styles.endButton}>
           <Text style={styles.buttonText}>End</Text>
         </TouchableOpacity>
       </View>
@@ -65,7 +68,7 @@ const styles = StyleSheet.create({
     marginBottom: scale(20),
     width: '100%'
   },
-  cancelButton: {
+  endButton: {
     borderWidth: 1,
     borderColor: '#A010A3',
     height: scale(44),
@@ -76,7 +79,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: scale(20),
-    color: '#A010A3'
+    color: '#A010A3',
+    fontFamily: fonts.comRegular,
   }
 });
 
