@@ -1,9 +1,22 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { scale } from 'react-native-size-matters';
 import Toast from 'react-native-simple-toast';
+import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
 
 const SendingScreen = ({navigation}) => {
+
+  const [showAnimation, setShowAnimation] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAnimation(false);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  });
+
   return (
     <View style={styles.parent}>
       <View style={styles.topContainer}>
@@ -11,6 +24,7 @@ const SendingScreen = ({navigation}) => {
         <Text style={styles.description}>Ensure that the two mobile devices are within 5 cm and both have NFC connectivity.</Text>
       </View>
       <View style={styles.animationContainer}>
+        {showAnimation ? <LoadingAnimation /> : null}
         <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
         <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
       </View>
