@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import { scale } from 'react-native-size-matters';
 import Toast from 'react-native-simple-toast';
 import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
+import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
 
 const SendingScreen = ({navigation}) => {
 
@@ -19,10 +20,7 @@ const SendingScreen = ({navigation}) => {
 
   return (
     <View style={styles.parent}>
-      <View style={styles.topContainer}>
-        <Text style={styles.heading}>Sending Money...</Text>
-        <Text style={styles.description}>Ensure that the two mobile devices are within 5 cm and both have NFC connectivity.</Text>
-      </View>
+      <ScreenHeading heading={'Sending Money...'} />
       <View style={styles.animationContainer}>
         {showAnimation ? <LoadingAnimation /> : null}
         <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
@@ -48,19 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: scale(16),
-  },
-  topContainer: {
-    alignItems: 'center',
-    marginTop: scale(20),
-  },
-  heading: {
-    fontSize: scale(20),
-    color: '#000000',
-  },
-  description: {
-    textAlign: 'center',
-    fontSize: scale(10),
-    color: '#838383'
   },
   animationContainer: {
     flexDirection: 'row',
