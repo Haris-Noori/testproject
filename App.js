@@ -7,17 +7,17 @@
 
 import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet} from 'react-native';
-
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   return (
     <SafeAreaView style={Styles.parent}>
-      <View>
-        <Text>Pyng Mobile App by Haris</Text>
-      </View>
+      <NavigationContainer>
+        
+      </NavigationContainer>
     </SafeAreaView>
   );
-};
+}
 
 const Styles = StyleSheet.create({
   parent: {
