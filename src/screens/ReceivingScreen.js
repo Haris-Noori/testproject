@@ -5,6 +5,7 @@ import Toast from 'react-native-simple-toast';
 import LoadingReverse from '../components/LoadingAnimationReverse/LoadingReverse';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
 import fonts from '../assets/fonts/fonts';
+import Button from '../components/Button/Button';
 
 const ReceivingScreen = ({navigation}) => {
 
@@ -30,14 +31,7 @@ const ReceivingScreen = ({navigation}) => {
       </View>
       
       <View style={styles.buttonContainer}>
-        <TouchableOpacity 
-          onPress={() => {
-            Toast.show('Ended successfully', Toast.SHORT);
-            navigation.replace('Sending');
-          }}
-          style={styles.endButton}>
-          <Text style={styles.buttonText}>End</Text>
-        </TouchableOpacity>
+      <Button btnText={'End'} btnName={'ReceivingScreen'} navigation={navigation} />
       </View>
     </View>
   )
@@ -68,20 +62,6 @@ const styles = StyleSheet.create({
     marginBottom: scale(20),
     width: '100%'
   },
-  endButton: {
-    borderWidth: 1,
-    borderColor: '#A010A3',
-    height: scale(44),
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: scale(25),
-  },
-  buttonText: {
-    fontSize: scale(20),
-    color: '#A010A3',
-    fontFamily: fonts.comRegular,
-  }
 });
 
 export default ReceivingScreen;

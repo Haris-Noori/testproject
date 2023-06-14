@@ -5,6 +5,7 @@ import Toast from 'react-native-simple-toast';
 import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
 import fonts from '../assets/fonts/fonts';
+import Button from '../components/Button/Button';
 
 const SendingScreen = ({navigation}) => {
 
@@ -30,14 +31,7 @@ const SendingScreen = ({navigation}) => {
       </View>
       
       <View style={styles.buttonContainer}>
-        <TouchableOpacity 
-          onPress={() => {
-            Toast.show('Cancelled successfully', Toast.SHORT);
-            navigation.navigate('Receiving');
-          }}
-          style={styles.cancelButton}>
-          <Text style={styles.buttonText}>Cancel</Text>
-        </TouchableOpacity>
+        <Button btnText={'Cancel'} btnName={'SendingScreen'} navigation={navigation} />
       </View>
     </View>
   )
@@ -68,20 +62,6 @@ const styles = StyleSheet.create({
     marginBottom: scale(20),
     width: '100%'
   },
-  cancelButton: {
-    borderWidth: 1,
-    borderColor: '#A010A3',
-    height: scale(44),
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: scale(25),
-  },
-  buttonText: {
-    fontSize: scale(20),
-    color: '#A010A3',
-    fontFamily: fonts.comRegular
-  }
 });
 
 export default SendingScreen;
