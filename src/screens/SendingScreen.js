@@ -4,6 +4,7 @@ import { scale } from 'react-native-size-matters';
 import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
 import Button from '../components/Button/Button';
+import ColorConatiner from '../components/ColorContainer/ColorConatiner';
 
 const SendingScreen = ({navigation}) => {
 
@@ -24,8 +25,8 @@ const SendingScreen = ({navigation}) => {
       
       <View style={styles.animationContainer}>
         {showAnimation ? <LoadingAnimation progressValue={0} animationValue={1} /> : null}
-        <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
-        <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
+        <ColorConatiner bgColor={'#A010A3'} />
+        <ColorConatiner bgColor={'#FE07C8'} />
       </View>
       
       <View style={styles.buttonContainer}>
@@ -48,11 +49,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '50%',
-  },
-  animationBoxes: {
-    height: scale(81),
-    width: scale(49),
-    borderRadius: scale(10),
   },
   buttonContainer: {
     justifyContent: 'flex-end',

@@ -24,8 +24,8 @@ const ReceivingScreen = ({navigation}) => {
       
       <View style={styles.animationContainer}>
         {showAnimation ? <LoadingAnimation progressValue={1} animationValue={0} /> : null}
-        <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
-        <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
+        <ColorConatiner bgColor={'#FE07C8'} />
+        <ColorConatiner bgColor={'#A010A3'} />
       </View>
       
       <View style={styles.buttonContainer}>
