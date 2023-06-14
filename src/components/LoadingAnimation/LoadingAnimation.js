@@ -1,14 +1,14 @@
 import { Animated, Easing } from 'react-native'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Lottie from 'lottie-react-native';
 
-const LoadingAnimation = () => {
+const LoadingAnimation = ({progressValue, animationValue}) => {
 
-    const animationProgress = useRef(new Animated.Value(0));
+    const animationProgress = useRef(new Animated.Value(progressValue));
 
     useEffect(() => {
         const animation = Animated.timing(animationProgress.current, {
-            toValue: 1,
+            toValue: animationValue,
             duration: 2000,
             easing: Easing.linear,
             useNativeDriver: false,

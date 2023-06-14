@@ -1,10 +1,8 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { scale } from 'react-native-size-matters';
-import Toast from 'react-native-simple-toast';
 import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
-import fonts from '../assets/fonts/fonts';
 import Button from '../components/Button/Button';
 
 const SendingScreen = ({navigation}) => {
@@ -25,7 +23,7 @@ const SendingScreen = ({navigation}) => {
       <ScreenHeading heading={'Sending Money...'} />
       
       <View style={styles.animationContainer}>
-        {showAnimation ? <LoadingAnimation /> : null}
+        {showAnimation ? <LoadingAnimation progressValue={0} animationValue={1} /> : null}
         <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
         <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
       </View>
