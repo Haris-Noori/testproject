@@ -12,7 +12,7 @@ const SendingScreen = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 10000);
+    }, 6000);
 
     return () => {
       clearTimeout(timer);

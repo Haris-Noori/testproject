@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { scale } from 'react-native-size-matters';
 import Toast from 'react-native-simple-toast';
-import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
+import LoadingReverse from '../components/LoadingAnimationReverse/LoadingReverse';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
 import fonts from '../assets/fonts/fonts';
 
@@ -12,7 +12,7 @@ const ReceivingScreen = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 10000);
+    }, 6000);
 
     return () => {
       clearTimeout(timer);
@@ -24,7 +24,7 @@ const ReceivingScreen = ({navigation}) => {
       <ScreenHeading heading={'Receiver Mode'} />
       
       <View style={styles.animationContainer}>
-        {showAnimation ? <LoadingAnimation /> : null}
+        {showAnimation ? <LoadingReverse /> : null}
         <View style={[styles.animationBoxes, {backgroundColor: '#FE07C8'}]} />
         <View style={[styles.animationBoxes, {backgroundColor: '#A010A3'}]} />
       </View>
