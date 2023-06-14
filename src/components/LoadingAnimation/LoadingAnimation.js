@@ -24,7 +24,7 @@ const LoadingAnimation = ({progressValue, animationValue}) => {
 
   return (
     <Lottie 
-        source={require('../../assets/loading_dots_pink.json')}
+        source={require('../../assets/animations/animation.json')}
         progress={animationProgress.current}
         loop
     />

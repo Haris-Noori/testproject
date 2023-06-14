@@ -1,9 +1,11 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { scale } from 'react-native-size-matters';
 import ScreenHeading from '../components/ScreenHeading/ScreenHeading';
 import Button from '../components/Button/Button';
 import LoadingAnimation from '../components/LoadingAnimation/LoadingAnimation';
+import ColorContainer from '../components/ColorContainer/ColorContainer';
+import * as Colors from '../assets/colors/Colors';
 
 const ReceivingScreen = ({navigation}) => {
 
@@ -24,8 +26,8 @@ const ReceivingScreen = ({navigation}) => {
       
       <View style={styles.animationContainer}>
         {showAnimation ? <LoadingAnimation progressValue={1} animationValue={0} /> : null}
-        <ColorConatiner bgColor={'#FE07C8'} />
-        <ColorConatiner bgColor={'#A010A3'} />
+        <ColorContainer bgColor={Colors.brandSecondary} />
+        <ColorContainer bgColor={Colors.brandPrimary} />
       </View>
       
       <View style={styles.buttonContainer}>

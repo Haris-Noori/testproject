@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import { SafeAreaView, StyleSheet} from 'react-native';
 import RootNavigation from './src/navigations';
 
 const App = () => {

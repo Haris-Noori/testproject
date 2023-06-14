@@ -22,9 +22,7 @@ const RootNavigation = (props) => {
 
   return (
     <NavigationContainer>
-        <Stack.Navigator screenOptions={{
-                headerShown: false,
-            }}>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="AppSatck" component={AppStack} />
         </Stack.Navigator>
     </NavigationContainer>

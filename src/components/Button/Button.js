@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import {scale} from 'react-native-size-matters';
 import Toast from 'react-native-simple-toast';
 import fonts from '../../assets/fonts/fonts';
+import * as Colors from '../../assets/colors/Colors';
 
 const Button = ({btnText, btnName, navigation}) => {
 
@@ -34,7 +35,7 @@ const Button = ({btnText, btnName, navigation}) => {
 const styles = StyleSheet.create({
     parent: {
         borderWidth: 1,
-        borderColor: '#A010A3',
+        borderColor: Colors.brandPrimary,
         height: scale(44),
         width: '100%',
         justifyContent: 'center',
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize: scale(20),
-        color: '#A010A3',
+        color: Colors.brandPrimary,
         fontFamily: fonts.comRegular
     }
 })

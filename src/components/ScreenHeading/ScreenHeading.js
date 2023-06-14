@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { scale } from 'react-native-size-matters';
 import fonts from '../../assets/fonts/fonts';
+import * as Colors from '../../assets/colors/Colors';
 
 const ScreenHeading = ({heading}) => {
   return (
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
       },
       heading: {
         fontSize: scale(20),
-        color: '#000000',
+        color: Colors.heading,
         fontFamily: fonts.semiBold
       },
       descriptionView: {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
       description: {
         textAlign: 'center',
         fontSize: scale(10),
-        color: '#838383'
+        color: Colors.text
       },
 });
 

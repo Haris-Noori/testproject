@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import {scale} from 'react-native-size-matters';
 
-const ColorConatiner = ({bgColor}) => {
+const ColorContainer = ({bgColor}) => {
   return (
     <View style={[styles.animationBoxes, {backgroundColor: bgColor}]}>
     </View>
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ColorConatiner
+export default ColorContainer
